@@ -1,1 +1,5 @@
+res://player/player.tscn
+res://camera/camera.gd
+res://camera/camera.tscn
+res://player/player.gd
 res://game/game.tscn
