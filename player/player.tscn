@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfmsagl3qu85h"]
+
+[ext_resource type="Script" uid="uid://3tw6vyrlkrs4" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_g1dw6"]
+
+[sub_resource type="Curve" id="Curve_rkbax"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g1dw6"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rkbax")
+ACCEL_TIME_TO_MAX = 0.05
+DECCEL_TIME_TO_STOP = 0.05
+ACCELERATION_CURVE = SubResource("Curve_rkbax")
+DECCELERATION_CURVE = SubResource("Curve_g1dw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Pixel" type="Sprite2D" parent="Sprite2D"]
+scale = Vector2(22, 22)
+texture = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kqu6x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
