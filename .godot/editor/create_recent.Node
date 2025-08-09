@@ -1,2 +1,8 @@
+CollisionShape2D
+Area2D
+StaticBody2D
+Node2D
+TextureRect
+ColorRect
 Camera2D
 AnimationPlayer

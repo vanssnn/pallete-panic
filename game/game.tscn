@@ -1,8 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbc6hxerwlj0v"]
+[gd_scene load_steps=5 format=3 uid="uid://dbc6hxerwlj0v"]
 
 [ext_resource type="PackedScene" uid="uid://bfmsagl3qu85h" path="res://player/player.tscn" id="1_l1rk1"]
+[ext_resource type="Texture2D" uid="uid://bb6fmyxduqst3" path="res://common/background.png" id="1_vasa2"]
+[ext_resource type="PackedScene" uid="uid://bnoh3mwv8586b" path="res://enemy/enemy.tscn" id="3_h7iqs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vasa2"]
 
 [node name="Game" type="Node2D"]
 
+[node name="ColorRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 1000.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vasa2")
+stretch_mode = 1
+
 [node name="Player" parent="." instance=ExtResource("1_l1rk1")]
-position = Vector2(74, 63)
+
+[node name="WorldBorder" type="Node2D" parent="."]
+
+[node name="Down" type="StaticBody2D" parent="WorldBorder"]
+position = Vector2(0, 1000)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder/Down"]
+shape = SubResource("WorldBoundaryShape2D_vasa2")
+
+[node name="Up" type="StaticBody2D" parent="WorldBorder"]
+position = Vector2(0, -1000)
+rotation = 3.14159
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder/Up"]
+shape = SubResource("WorldBoundaryShape2D_vasa2")
+
+[node name="Left" type="StaticBody2D" parent="WorldBorder"]
+position = Vector2(-1000, 0)
+rotation = 1.5708
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder/Left"]
+shape = SubResource("WorldBoundaryShape2D_vasa2")
+
+[node name="Right" type="StaticBody2D" parent="WorldBorder"]
+position = Vector2(1000, 0)
+rotation = -1.5708
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder/Right"]
+shape = SubResource("WorldBoundaryShape2D_vasa2")
+
+[node name="Enemy" parent="." instance=ExtResource("3_h7iqs")]
+position = Vector2(-522, 487)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_h7iqs")]
+position = Vector2(397, 220)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_h7iqs")]
+position = Vector2(-409, -432)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_h7iqs")]
+position = Vector2(518, -532)
