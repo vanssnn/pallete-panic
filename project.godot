@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Pallete Panic"
-run/main_scene="uid://dbc6hxerwlj0v"
+run/main_scene="uid://bs6maqhawnwhd"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Enums="*res://autoloads/enums.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
