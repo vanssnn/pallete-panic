@@ -1,6 +1,6 @@
+Label
 HBoxContainer
 VBoxContainer
-Label
 CanvasLayer
 Timer
 Area2D

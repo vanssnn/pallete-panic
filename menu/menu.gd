@@ -13,4 +13,4 @@ func _on_start_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	AudioHandler.play_sfx(click_sfx, 0, randf_range(0.8, 1.2))
-	SceneManager.quit_game()
+	get_tree().quit()

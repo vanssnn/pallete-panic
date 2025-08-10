@@ -139,11 +139,11 @@ vertical_alignment = 1
 
 [node name="LabelInteract" type="Label" parent="."]
 visible = false
-offset_left = -408.0
+offset_left = -448.0
 offset_top = 160.0
-offset_right = 407.0
+offset_right = 448.0
 offset_bottom = 236.0
-text = "Press [SPACE] to Interact!"
+text = "[SPACE] to INTERACT!"
 label_settings = ExtResource("3_4ulc0")
 horizontal_alignment = 1
 vertical_alignment = 1

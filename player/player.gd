@@ -94,10 +94,15 @@ func handle_movement(delta: float):
 	
 	move_and_slide()
 
+@onready var control_label: Label = $ControlLabel
+
 func handle_anim():
 	var input_direction = get_input_direction()
 	if input_direction != Vector2.ZERO and state != Enums.PlayerState.DIE:
 		change_animation("move")
+		if control_label.visible:
+			control_label.visible = false
+		
 	else:
 		change_animation("idle")
 #
@@ -108,10 +113,15 @@ func change_animation(animation_name: String):
 
 const collision_sfx = preload("res://sfx/woosh1.mp3")
 
+@onready var collide_label: Label = $CollideLabel
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if state == Enums.PlayerState.DIE: return
 	if not body.is_in_group("Enemy"): return
+	
+	if collide_label.visible:
+		collide_label.visible = false
 	
 	do_squash_stretch_tween()
 	camera.apply_screen_shake(10, 0.1)
