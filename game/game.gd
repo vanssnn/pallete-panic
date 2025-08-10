@@ -42,7 +42,8 @@ var score: int = 0:
 		if score >= score_target:
 			AudioHandler.play_sfx(next_target_sfx, 0, randf_range(0.8, 1.2))
 			score_target += score_target_accumulator
-			score_target_accumulator += 10
+			score_target_accumulator += 50
+			timer_label_info.text = "+10 seconds"
 			show_timer_info_tween()
 			realtimetimer._setup(realtimetimer.remaining_time_sec() + 10)
 
@@ -52,7 +53,7 @@ var score_target: int = score_target_accumulator:
 		return score_target
 	set(value):
 		score_target = value
-		score_target_label.text = str(score_target)
+		score_target_label.text = str(score_target) + " for more time"
 
 @onready var player: CharacterBody2D = $Player
 @onready var tower: Area2D = $Tower
@@ -79,7 +80,7 @@ func _on_tower_interact(tower_color: Color, player_color: Color) -> void:
 	var total_diff: float = absf(tower_color.r - player_color.r) + absf(tower_color.g - player_color.g) + absf(tower_color.b - player_color.b)
 	var score_diff: int = 100 - ceil((total_diff/3) * 100)
 	
-	if (total_diff < 0.3):
+	if (total_diff < 0.4):
 		AudioHandler.play_sfx(positive_score_sfx, 0, randf_range(0.8, 1.2))
 		score += score_diff
 		score_label_info.text = "+" + str(score_diff)
@@ -87,5 +88,9 @@ func _on_tower_interact(tower_color: Color, player_color: Color) -> void:
 		AudioHandler.play_sfx(negative_score_sfx, 0, randf_range(0.8, 1.2))
 		score -= score_diff
 		score_label_info.text = "-" + str(score_diff)
+		
+		timer_label_info.text = "-5 seconds"
+		show_timer_info_tween()
+		realtimetimer._setup(realtimetimer.remaining_time_sec() - 5)
 	
 	show_score_info_tween()

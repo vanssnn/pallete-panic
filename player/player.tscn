@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfmsagl3qu85h"]
+[gd_scene load_steps=15 format=3 uid="uid://bfmsagl3qu85h"]
 
 [ext_resource type="Script" uid="uid://3tw6vyrlkrs4" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_g1dw6"]
@@ -113,9 +113,15 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(1.12, 1.12)
 
+[sub_resource type="LabelSettings" id="LabelSettings_yw30f"]
+font = ExtResource("4_yw30f")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+
 [sub_resource type="LabelSettings" id="LabelSettings_qjkh3"]
 font = ExtResource("4_yw30f")
-font_size = 36
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 outline_size = 16
 
@@ -155,20 +161,21 @@ shape = SubResource("RectangleShape2D_g1dw6")
 
 [node name="ControlLabel" type="Label" parent="."]
 offset_left = -192.0
-offset_top = -112.0
+offset_top = -168.0
 offset_right = 192.0
-offset_bottom = -55.0
-text = "[WASD] to MOVE"
-label_settings = SubResource("LabelSettings_qjkh3")
+offset_bottom = -51.0
+text = "[WASD] or [ARROW KEYS] to MOVE"
+label_settings = SubResource("LabelSettings_yw30f")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="CollideLabel" type="Label" parent="."]
-offset_left = -256.0
-offset_top = 56.0
-offset_right = 256.0
-offset_bottom = 173.0
-text = "COLLIDE with other's to MIX color"
+offset_left = -192.0
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 165.0
+text = "COLLIDE with other's to MIX COLOR"
 label_settings = SubResource("LabelSettings_qjkh3")
 horizontal_alignment = 1
 vertical_alignment = 1

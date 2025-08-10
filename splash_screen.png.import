@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc51se88fga58"
-path="res://.godot/imported/RealTimeTimer.jpg-66a33431246a69424160d524046aa6bf.ctex"
+uid="uid://dhddx36p8kco5"
+path="res://.godot/imported/splash_screen.png-c4325b211491e80389593ab522aa4a51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RealTimeTimer.jpg"
-dest_files=["res://.godot/imported/RealTimeTimer.jpg-66a33431246a69424160d524046aa6bf.ctex"]
+source_file="res://splash_screen.png"
+dest_files=["res://.godot/imported/splash_screen.png-c4325b211491e80389593ab522aa4a51.ctex"]
 
 [params]
 
