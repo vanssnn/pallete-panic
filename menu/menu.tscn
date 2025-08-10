@@ -96,5 +96,22 @@ position = Vector2(532.625, 181.75)
 scale = Vector2(0.077, 0.078)
 texture = ExtResource("3_6nwqt")
 
+[node name="Exit2" type="Button" parent="Overlay"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = 798.0
+offset_top = 27.0
+offset_right = 998.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("3_pbjm4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_s4hbh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6fswf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_bc54p")
+text = "Credit
+"
+flat = true
+
 [connection signal="pressed" from="Overlay/MarginContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Overlay/MarginContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Overlay/Exit2" to="." method="_on_exit_2_pressed"]

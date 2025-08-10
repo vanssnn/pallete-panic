@@ -14,3 +14,12 @@ func _on_start_pressed() -> void:
 func _on_exit_pressed() -> void:
 	AudioHandler.play_sfx(click_sfx, 0, randf_range(0.8, 1.2))
 	get_tree().quit()
+
+
+func _on_exit_2_pressed() -> void:
+	SceneManager.change_scene(
+	"res://menu/credits/credits.tscn",
+	{
+	  "pattern": "squares",
+	}
+)
