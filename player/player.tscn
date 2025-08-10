@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://3tw6vyrlkrs4" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://bltxrdm6pjdpq" path="res://camera/camera.tscn" id="3_g1dw6"]
-[ext_resource type="FontFile" uid="uid://w2blypbwd0n3" path="res://font/Minercraftory.ttf" id="4_yw30f"]
+[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://font/Pixel Digivolve.otf" id="4_yw30f"]
 
 [sub_resource type="Curve" id="Curve_rkbax"]
 _data = [Vector2(0, 0), 0.0, 7.00379, 0, 0, Vector2(0.0771605, 0.709057), 1.91828, 1.91828, 0, 0, Vector2(0.222222, 0.924697), 0.428815, 0.428815, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -160,9 +160,9 @@ scale = Vector2(100, 100)
 shape = SubResource("RectangleShape2D_g1dw6")
 
 [node name="ControlLabel" type="Label" parent="."]
-offset_left = -192.0
+offset_left = -168.0
 offset_top = -168.0
-offset_right = 192.0
+offset_right = 168.0
 offset_bottom = -51.0
 text = "[WASD] or [ARROW KEYS] to MOVE"
 label_settings = SubResource("LabelSettings_yw30f")
@@ -171,9 +171,9 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="CollideLabel" type="Label" parent="."]
-offset_left = -192.0
+offset_left = -160.0
 offset_top = 48.0
-offset_right = 192.0
+offset_right = 160.0
 offset_bottom = 165.0
 text = "COLLIDE with other's to MIX COLOR"
 label_settings = SubResource("LabelSettings_qjkh3")

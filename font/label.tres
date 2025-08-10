@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bsgne2isprlx8"]
 
-[ext_resource type="FontFile" uid="uid://w2blypbwd0n3" path="res://font/Minercraftory.ttf" id="1_a0h4e"]
+[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://font/Pixel Digivolve.otf" id="1_a0h4e"]
 
 [resource]
 font = ExtResource("1_a0h4e")

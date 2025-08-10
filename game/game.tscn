@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnoh3mwv8586b" path="res://enemy/enemy.tscn" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://dwxh43moefesn" path="res://enemy_spawner/enemy_spawner.tscn" id="4_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://dn1jcybkyi5bh" path="res://tower/tower.tscn" id="5_dxrkv"]
-[ext_resource type="FontFile" uid="uid://w2blypbwd0n3" path="res://font/Minercraftory.ttf" id="7_u5opy"]
+[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://font/Pixel Digivolve.otf" id="7_y36n6"]
 [ext_resource type="LabelSettings" uid="uid://bsgne2isprlx8" path="res://font/label.tres" id="8_y36n6"]
 
 [sub_resource type="Environment" id="Environment_y36n6"]
@@ -24,22 +24,22 @@ _data = {
 point_count = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_l8g03"]
-font = ExtResource("7_u5opy")
+font = ExtResource("7_y36n6")
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 outline_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_y36n6"]
-font = ExtResource("7_u5opy")
+font = ExtResource("7_y36n6")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 outline_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_j8tme"]
-font = ExtResource("7_u5opy")
+font = ExtResource("7_y36n6")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
-outline_size = 16
+outline_size = 12
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u5opy")
