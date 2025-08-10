@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ch21eb8bo7j6u" path="res://menu/game_over.gd" id="1_2lfuh"]
 [ext_resource type="Texture2D" uid="uid://bb6fmyxduqst3" path="res://common/background.png" id="2_r3a6b"]
-[ext_resource type="FontFile" uid="uid://cia6aiiwwik5q" path="res://common/Minercraftory.ttf" id="3_4y6p8"]
+[ext_resource type="FontFile" uid="uid://w2blypbwd0n3" path="res://font/Minercraftory.ttf" id="3_4y6p8"]
 [ext_resource type="Texture2D" uid="uid://deu0dfn25whom" path="res://common/Rectangle 6.png" id="4_ibwon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]

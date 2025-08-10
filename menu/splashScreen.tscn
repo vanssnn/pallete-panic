@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs6maqhawnwhd"]
 
 [ext_resource type="Script" uid="uid://dv4webg1mtkod" path="res://menu/splash_screen.gd" id="1_i4s3g"]
-[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://common/Pixel Digivolve.otf" id="3_i4s3g"]
+[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://font/Pixel Digivolve.otf" id="3_i4s3g"]
 [ext_resource type="Texture2D" uid="uid://bj3vhyvukmcns" path="res://common/Untitled design (11) 2 1.png" id="4_dqjhv"]
 [ext_resource type="Texture2D" uid="uid://dn8bewokawpux" path="res://common/Paltte panic-04.png" id="4_j4nw3"]
 [ext_resource type="Texture2D" uid="uid://cjvoraesiuhvu" path="res://common/Untitled design (11) 2 2.png" id="5_j4nw3"]

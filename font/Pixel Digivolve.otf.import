@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cia6aiiwwik5q"
-path="res://.godot/imported/Minercraftory.ttf-045c47a999e524cd9268641571042738.fontdata"
+uid="uid://doclou156ivql"
+path="res://.godot/imported/Pixel Digivolve.otf-f8e8123c67adb9affb9ff91dd9a58706.fontdata"
 
 [deps]
 
-source_file="res://common/Minercraftory.ttf"
-dest_files=["res://.godot/imported/Minercraftory.ttf-045c47a999e524cd9268641571042738.fontdata"]
+source_file="res://font/Pixel Digivolve.otf"
+dest_files=["res://.godot/imported/Pixel Digivolve.otf-f8e8123c67adb9affb9ff91dd9a58706.fontdata"]
 
 [params]
 
