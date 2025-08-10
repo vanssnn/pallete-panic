@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://khyjh1u5ydxp"
+path="res://.godot/imported/Retro Mystic.mp3-c920404acab3be23bfaa5c5e2a3be826.mp3str"
+
+[deps]
+
+source_file="res://music/Retro Mystic.mp3"
+dest_files=["res://.godot/imported/Retro Mystic.mp3-c920404acab3be23bfaa5c5e2a3be826.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

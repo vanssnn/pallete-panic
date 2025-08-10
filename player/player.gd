@@ -106,6 +106,7 @@ func change_animation(animation_name: String):
 	if animation_player.current_animation != animation_name:
 		animation_player.play(animation_name)
 
+const collision_sfx = preload("res://sfx/woosh1.mp3")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
@@ -123,4 +124,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		(color.b + body.color.b) / 2.0
 	)
 	
+	AudioHandler.play_sfx(collision_sfx, 0, randf_range(0.8, 1.2))
 	color = avg_color

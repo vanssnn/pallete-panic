@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Enums="*res://autoloads/enums.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+AudioHandler="*res://autoloads/audio_handler.gd"
+Globals="*res://autoloads/globals.gd"
 
 [display]
 
@@ -75,3 +77,4 @@ interact={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.133196, 0.133196, 0.133196, 1)

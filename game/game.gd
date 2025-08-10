@@ -29,7 +29,9 @@ func show_timer_info_tween() -> void:
 	timer_info_tween.tween_interval(0.5)
 	timer_info_tween.tween_property(timer_label_info, "modulate:a", 0, 0.2)
 	timer_info_tween.tween_callback(func(): timer_label_info.visible = false)
-	
+
+const next_target_sfx = preload("res://sfx/cardFan1.mp3")
+
 var score: int = 0:
 	get():
 		return score
@@ -38,6 +40,7 @@ var score: int = 0:
 		score_label.text = str(score)
 		
 		if score >= score_target:
+			AudioHandler.play_sfx(next_target_sfx, 0, randf_range(0.8, 1.2))
 			score_target += score_target_accumulator
 			score_target_accumulator += 10
 			show_timer_info_tween()
@@ -62,18 +65,26 @@ func _ready() -> void:
 	
 func on_realtimetimer_timeout() -> void:
 	player.state = Enums.PlayerState.DIE
+	
+	Globals.score = score
+	SceneManager.change_scene("res://menu/game_over.tscn", {"pattern": "squares"})
 
 func on_realtimetimer_update_timer(seconds_inf_float : float) -> void:
 	timer_label.text = realtimetimer.remaining_seconds_to_hms()
+
+const negative_score_sfx = preload("res://sfx/creature1.mp3")
+const positive_score_sfx = preload("res://sfx/cardSlide6.mp3")
 
 func _on_tower_interact(tower_color: Color, player_color: Color) -> void:
 	var total_diff: float = absf(tower_color.r - player_color.r) + absf(tower_color.g - player_color.g) + absf(tower_color.b - player_color.b)
 	var score_diff: int = 100 - ceil((total_diff/3) * 100)
 	
 	if (total_diff < 0.3):
+		AudioHandler.play_sfx(positive_score_sfx, 0, randf_range(0.8, 1.2))
 		score += score_diff
 		score_label_info.text = "+" + str(score_diff)
 	else:
+		AudioHandler.play_sfx(negative_score_sfx, 0, randf_range(0.8, 1.2))
 		score -= score_diff
 		score_label_info.text = "-" + str(score_diff)
 	

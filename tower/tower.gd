@@ -39,12 +39,15 @@ func _ready():
 
 func _process(delta: float) -> void:
 	handle_interaction()
+	
+const click_sfx = preload("res://sfx/click2.mp3")
 
 func handle_interaction():
 	if not player_is_inside: return
 	
 	if player and is_instance_valid(player):
 		if Input.is_action_just_pressed("interact") and not player.state == Enums.PlayerState.DIE:
+			AudioHandler.play_sfx(click_sfx, 0, randf_range(0.8, 1.2))
 			emit_signal("interact", color, player.color)
 			player.camera.apply_screen_shake(16, 0.2)
 			do_squash_stretch_tween()

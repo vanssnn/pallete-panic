@@ -1,6 +1,6 @@
 res://game/game.tscn
 res://font/label.tres
-res://enemy/enemy.gd
+res://autoloads/audio_handler.gd
 res://player/player.tscn
 res://camera/camera.tscn
 res://enemy/enemy.tscn
@@ -8,3 +8,11 @@ res://enemy_spawner/enemy_spawner.tscn
 res://tower/tower.tscn
 res://addons/RealTimeTimer/Examples/timer_example.tscn
 res://game/game.gd
+res://player/player.gd
+res://tower/tower.gd
+res://menu/menu.gd
+res://menu/menu.tscn
+res://menu/gameOver.tscn
+res://menu/game_over.gd
+res://menu/game_over.tscn
+res://autoloads/globals.gd
