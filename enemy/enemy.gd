@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var lifespan_timer: Timer = $LifespanTimer
 
 @export var speed: float = 200.0
 
@@ -36,10 +37,15 @@ var state: Enums.EnemyState = Enums.EnemyState.CHASE:
 
 func randomize_color():
 	color = Color(randf_range(0.2, 0.8), randf_range(0.2, 0.8), randf_range(0.2, 0.8))
-	
+
+func randomize_lifespan():
+	lifespan_timer.wait_time = randf_range(8, 20)
+
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
 	randomize_color()
+	randomize_lifespan()
+	lifespan_timer.start()
 
 func _process(delta: float) -> void:	
 	pass
@@ -63,3 +69,7 @@ func chase_player(delta: float):
 		velocity = velocity.move_toward(target_velocity, speed * delta)
 		
 		move_and_slide()
+
+
+func _on_lifespan_timer_timeout() -> void:
+	state = Enums.EnemyState.DIE

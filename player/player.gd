@@ -109,9 +109,10 @@ func change_animation(animation_name: String):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
-	do_squash_stretch_tween()
-	
 	if not body.is_in_group("Enemy"): return
+	
+	do_squash_stretch_tween()
+	camera.apply_screen_shake(10, 0.1)
 	
 	body.state = Enums.EnemyState.DIE
 	

@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnoh3mwv8586b"]
+[gd_scene load_steps=8 format=3 uid="uid://dn1jcybkyi5bh"]
 
-[ext_resource type="Script" uid="uid://bbhwjyt6bvyt5" path="res://enemy/enemy.gd" id="1_ofsxj"]
-[ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_n0aos"]
+[ext_resource type="Script" uid="uid://ck4dpq2fryec2" path="res://tower/tower.gd" id="1_3fjlj"]
+[ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_xnej4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
-size = Vector2(100, 100)
+size = Vector2(304, 304)
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 length = 0.001
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+"values": [Vector2(1, 1), Vector2(0.95, 0.95)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -100,15 +100,20 @@ _data = {
 &"move": SubResource("Animation_yw30f")
 }
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
-collision_mask = 7
-script = ExtResource("1_ofsxj")
+[node name="Tower" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_3fjlj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
+[node name="Outline" type="Sprite2D" parent="Sprite2D"]
+visible = false
+scale = Vector2(320, 320)
+texture = ExtResource("2_xnej4")
+
 [node name="Pixel" type="Sprite2D" parent="Sprite2D"]
-scale = Vector2(100, 100)
-texture = ExtResource("2_n0aos")
+scale = Vector2(300, 300)
+texture = ExtResource("2_xnej4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kqu6x")
@@ -117,11 +122,28 @@ shape = SubResource("RectangleShape2D_kqu6x")
 libraries = {
 &"": SubResource("AnimationLibrary_qjkh3")
 }
-autoplay = "move"
+autoplay = "idle"
 playback_auto_capture_transition_type = 5
 playback_default_blend_time = 0.2
 
-[node name="LifespanTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Label" type="Label" parent="."]
+offset_left = -152.0
+offset_top = -192.0
+offset_right = 150.0
+offset_bottom = -169.0
+text = "Feed me my COLOR!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="timeout" from="LifespanTimer" to="." method="_on_lifespan_timer_timeout"]
+[node name="LabelInteract" type="Label" parent="."]
+visible = false
+offset_left = -150.0
+offset_top = 168.0
+offset_right = 152.0
+offset_bottom = 191.0
+text = "Press [SPACE] to Interact!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
