@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs6maqhawnwhd"]
+
+[ext_resource type="Script" uid="uid://dv4webg1mtkod" path="res://menu/splash_screen.gd" id="1_i4s3g"]
+[ext_resource type="FontFile" uid="uid://doclou156ivql" path="res://common/Pixel Digivolve.otf" id="3_i4s3g"]
+[ext_resource type="Texture2D" uid="uid://bj3vhyvukmcns" path="res://common/Untitled design (11) 2 1.png" id="4_dqjhv"]
+[ext_resource type="Texture2D" uid="uid://dn8bewokawpux" path="res://common/Paltte panic-04.png" id="4_j4nw3"]
+[ext_resource type="Texture2D" uid="uid://cjvoraesiuhvu" path="res://common/Untitled design (11) 2 2.png" id="5_j4nw3"]
+
+[node name="splashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i4s3g")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -87.0
+offset_right = 1422.0
+offset_bottom = 819.0
+color = Color(0, 0, 0, 0.976471)
+
+[node name="Sprite2D" type="Sprite2D" parent="Overlay"]
+position = Vector2(706, 301)
+scale = Vector2(0.10346, 0.09436)
+texture = ExtResource("4_j4nw3")
+
+[node name="Label" type="Label" parent="Overlay"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 481.0
+offset_right = 913.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("3_i4s3g")
+theme_override_font_sizes/font_size = 30
+text = "KEEP CALM & MIX COLOR"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Overlay"]
+position = Vector2(245, 453)
+texture = ExtResource("4_dqjhv")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Overlay"]
+position = Vector2(1196, 446)
+texture = ExtResource("5_j4nw3")
