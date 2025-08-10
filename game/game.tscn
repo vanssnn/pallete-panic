@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbc6hxerwlj0v"]
+[gd_scene load_steps=7 format=3 uid="uid://dbc6hxerwlj0v"]
 
 [ext_resource type="PackedScene" uid="uid://bfmsagl3qu85h" path="res://player/player.tscn" id="1_l1rk1"]
 [ext_resource type="Texture2D" uid="uid://bb6fmyxduqst3" path="res://common/background.png" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://bnoh3mwv8586b" path="res://enemy/enemy.tscn" id="3_h7iqs"]
+[ext_resource type="Script" uid="uid://dkm6xa3yq3v03" path="res://game/node_2d.gd" id="4_4fuuu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vasa2"]
+
+[sub_resource type="Curve2D" id="Curve2D_dxrkv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1039, -1027, 0, 0, 0, 0, 1016, -1008, 0, 0, 0, 0, 1022, 1034, 0, 0, 0, 0, -1045, 1040, 0, 0, 0, 0, -1039, -1027)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 
@@ -67,3 +74,11 @@ position = Vector2(-409, -432)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_h7iqs")]
 position = Vector2(518, -532)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_dxrkv")
+
+[node name="Node2D" type="Node2D" parent="Path2D" node_paths=PackedStringArray("path")]
+script = ExtResource("4_4fuuu")
+path = NodePath("..")
+enemy_scene = ExtResource("3_h7iqs")

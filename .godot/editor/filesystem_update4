@@ -1,7 +1,5 @@
 res://game/game.tscn
 res://player/player.tscn
 res://camera/camera.tscn
-res://player/player.gd
 res://enemy/enemy.tscn
-res://enemy/enemy.gd
-res://autoloads/enums.gd
+res://game/node_2d.gd
