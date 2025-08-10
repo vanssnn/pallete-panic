@@ -27,7 +27,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/stopwatch/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

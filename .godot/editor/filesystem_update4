@@ -1,9 +1,10 @@
 res://game/game.tscn
-res://game/game.gd
+res://font/label.tres
+res://enemy/enemy.gd
 res://player/player.tscn
 res://camera/camera.tscn
 res://enemy/enemy.tscn
 res://enemy_spawner/enemy_spawner.tscn
 res://tower/tower.tscn
 res://addons/RealTimeTimer/Examples/timer_example.tscn
-res://player/player.gd
+res://game/game.gd

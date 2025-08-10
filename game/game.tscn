@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbc6hxerwlj0v"]
+[gd_scene load_steps=14 format=3 uid="uid://dbc6hxerwlj0v"]
 
 [ext_resource type="PackedScene" uid="uid://bfmsagl3qu85h" path="res://player/player.tscn" id="1_l1rk1"]
 [ext_resource type="Script" uid="uid://en251qtm3edh" path="res://game/game.gd" id="1_u5opy"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bnoh3mwv8586b" path="res://enemy/enemy.tscn" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://dwxh43moefesn" path="res://enemy_spawner/enemy_spawner.tscn" id="4_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://dn1jcybkyi5bh" path="res://tower/tower.tscn" id="5_dxrkv"]
+[ext_resource type="FontFile" uid="uid://w2blypbwd0n3" path="res://font/Minercraftory.ttf" id="7_u5opy"]
+[ext_resource type="LabelSettings" uid="uid://bsgne2isprlx8" path="res://font/label.tres" id="8_y36n6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vasa2"]
 
@@ -14,6 +16,24 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1800, -1400, 0, 0, 0, 0, 1800, 1400, 0, 0, 0, 0, -1800, 1400, 0, 0, 0, 0, -1800, -1400, 0, 0, 0, 0, 1800, -1400)
 }
 point_count = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8g03"]
+font = ExtResource("7_u5opy")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_y36n6"]
+font = ExtResource("7_u5opy")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8tme"]
+font = ExtResource("7_u5opy")
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u5opy")
@@ -79,19 +99,19 @@ curve = SubResource("Curve2D_dxrkv")
 path = NodePath("../Path2D")
 
 [node name="Enemy" parent="." instance=ExtResource("3_h7iqs")]
-position = Vector2(-841, -458)
+position = Vector2(-900, -900)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_h7iqs")]
 position = Vector2(190, -807)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_h7iqs")]
-position = Vector2(-870, 836)
+position = Vector2(-900, 900)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_h7iqs")]
-position = Vector2(867, 887)
+position = Vector2(900, 900)
 
 [node name="Enemy5" parent="." instance=ExtResource("3_h7iqs")]
-position = Vector2(814, -460)
+position = Vector2(900, -900)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -100,21 +120,46 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 135.0
 offset_bottom = 70.0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 
-[node name="TimerLabel" type="Label" parent="UI/VBoxContainer"]
+[node name="HBoxTimer" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
-text = "Time Left: 0"
+theme_override_constants/separation = 20
+
+[node name="TimerLabel" type="Label" parent="UI/VBoxContainer/HBoxTimer"]
+layout_mode = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_l8g03")
 vertical_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="UI/VBoxContainer"]
+[node name="TimerLabelInfo" type="Label" parent="UI/VBoxContainer/HBoxTimer"]
+visible = false
 layout_mode = 2
-text = "Score: 0"
+text = "+10 Seconds"
+label_settings = SubResource("LabelSettings_y36n6")
+vertical_alignment = 1
+
+[node name="HBoxScore" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="ScoreLabel" type="Label" parent="UI/VBoxContainer/HBoxScore"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("8_y36n6")
+vertical_alignment = 1
+
+[node name="ScoreLabelInfo" type="Label" parent="UI/VBoxContainer/HBoxScore"]
+visible = false
+layout_mode = 2
+text = "+0"
+label_settings = ExtResource("8_y36n6")
 vertical_alignment = 1
 
 [node name="ScoreTargetLabel" type="Label" parent="UI/VBoxContainer"]
 layout_mode = 2
-text = "Target Score: 0"
+text = "100"
+label_settings = SubResource("LabelSettings_j8tme")
 vertical_alignment = 1
 
 [connection signal="interact" from="Tower" to="." method="_on_tower_interact"]

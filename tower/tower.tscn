@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn1jcybkyi5bh"]
+[gd_scene load_steps=9 format=3 uid="uid://dn1jcybkyi5bh"]
 
 [ext_resource type="Script" uid="uid://ck4dpq2fryec2" path="res://tower/tower.gd" id="1_3fjlj"]
 [ext_resource type="Texture2D" uid="uid://4ax48s4httmv" path="res://common/pixel.png" id="2_xnej4"]
+[ext_resource type="LabelSettings" uid="uid://bsgne2isprlx8" path="res://font/label.tres" id="3_4ulc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 size = Vector2(304, 304)
@@ -127,21 +128,23 @@ playback_auto_capture_transition_type = 5
 playback_default_blend_time = 0.2
 
 [node name="Label" type="Label" parent="."]
-offset_left = -152.0
-offset_top = -192.0
-offset_right = 150.0
-offset_bottom = -169.0
+offset_left = -296.0
+offset_top = -232.0
+offset_right = 300.0
+offset_bottom = -156.0
 text = "Feed me my COLOR!"
+label_settings = ExtResource("3_4ulc0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelInteract" type="Label" parent="."]
 visible = false
-offset_left = -150.0
-offset_top = 168.0
-offset_right = 152.0
-offset_bottom = 191.0
+offset_left = -408.0
+offset_top = 160.0
+offset_right = 407.0
+offset_bottom = 236.0
 text = "Press [SPACE] to Interact!"
+label_settings = ExtResource("3_4ulc0")
 horizontal_alignment = 1
 vertical_alignment = 1
 

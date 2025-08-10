@@ -39,7 +39,7 @@ func randomize_color():
 	color = Color(randf_range(0.2, 0.8), randf_range(0.2, 0.8), randf_range(0.2, 0.8))
 
 func randomize_lifespan():
-	lifespan_timer.wait_time = randf_range(8, 20)
+	lifespan_timer.wait_time = randf_range(8, 15)
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
